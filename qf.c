@@ -200,7 +200,7 @@ static void insert_into(struct quotient_filter *qf, uint64_t s, uint64_t elt)
 
 bool qf_insert(struct quotient_filter *qf, uint64_t hash)
 {
-	if (qf->qf_entries >= qf->qf_max_size) {
+	if (qf->qf_entries >= qf->qf_max_size * qf->qf_rbits) {
 		return false;
 	}
 
